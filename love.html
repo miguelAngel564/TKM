@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body class="container bg-primary text-white text-center py-5">
+    <h1 class="display-1 fw-bold">Ты хочешь быть моим спутником жизни и жениться на мне?</h1>
+
+    <div class="mt-5">
+        <button class="btn btn-light btn-lg" onclick="siquiere()">
+            Да, я принимаю =D
+        </button>
+<br>
+        <button id="btn1" class="btn btn-danger ms-2 btn-lg"  onmouseenter="noquiere(event)">
+            Нет, я не хочу:(
+        </button>
+    </div>
+    <style>
+        #btn1{
+            margin-bottom: 8px;
+        }
+    </style>
+    <script>
+  
+
+        function noquiere(evt){
+            let target = evt.target;
+            let maxWidth = window.innerWidth;
+            let maxHeight = window.innerHeight
+
+            let randomWidth = getRandomInit(0, maxWidth - target.offsetWidth);
+            let randomHeight = getRandomInit(0, maxHeight - target.offsetHeight);
+
+            target.style.position = "absolute";
+            target.style.top = randomHeight + "px";
+            target.style.left = randomWidth + "px";
+        }
+        function siquiere(){
+            alert("счастье, вы только что сформировали многообещающее будущее с парнем, у которого есть только глаза на вас!💍 🤵👰")
+        }
+
+        function getRandomInit(min, max){
+            return Math.floor (Math.random() * (max - min)) + min;
+        }
+    </script>
+</body>
+</html>
